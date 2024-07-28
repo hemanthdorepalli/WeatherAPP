@@ -1,0 +1,244 @@
+html{
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* overflow-y: hidden; */
+
+}
+.Search-bar{
+  /* margin-top: 20px ; */
+  /* margin-bottom: 35px; */
+  border-radius: 50px;
+  background: transparent;
+}
+.App{
+   width: 100vw;
+  height: 100vh; 
+}
+.tempearature-box{
+  width: 127px;
+  height: 100px;
+  border-radius: 20px;
+  background: rgba(152, 190, 193, 0.407);
+  box-shadow: 0 8px 32px 0 rgba(86, 138, 142, 0.37) ;
+  backdrop-filter: blur(8px);
+}
+.TimeAndLocation{
+  height: 430px;
+}
+.Hourly-forecast{
+  width: 90px;
+  height: 170px;
+  border-radius: 20px;
+  background: rgba(152, 190, 193, 0.407);
+  box-shadow: 0 8px 32px 0 rgba(86, 138, 142, 0.37) ;
+  backdrop-filter: blur(8px);
+  
+  
+}
+.temp-rise{
+  /* width: 500px; */
+  height:30px;
+  border-radius: 20px;
+  background: rgba(152, 190, 193, 0.407);
+  box-shadow: 0 8px 32px 0 rgba(86, 138, 142, 0.37) ;
+  backdrop-filter: blur(8px);
+}
+.Mist_wallpaper_background{
+  background-image: url(./assets/Mist.jpg);
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: cover;
+  color: whitesmoke;
+}
+.NightMist_wallpaper_background{
+  background-image: url(./assets/NightMist.jpeg);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+  color: whitesmoke;
+}
+.Drizzle_wallpaper_background{
+  background-image: url(./assets/Drizzle.gif);
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: cover;
+}
+.NightDrizzle_wallpaper_background{
+  background-image: url(./assets/NightDrizzle.gif);
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: cover;
+  
+}
+.Snow_wallpaper_background{
+  background-image: url(./assets/snow.jpeg);
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: cover;
+}
+.NightSnow_wallpaper_background{
+  background-image: url(./assets/NightSnow.gif);
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: cover;
+  color: whitesmoke;
+}
+.Rain_wallpaper_background{
+  background-image: url(./assets/rain.gif);
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: cover;
+  color: whitesmoke;
+}
+.NightRain_wallpaper_background{
+  background-image: url(./assets/Nightrain.gif);
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: cover;
+  color: whitesmoke;
+}
+.Clouds_wallpaper_background{
+  background-image: url(./assets/Clouds.jpeg);
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: cover;
+  color: black;
+}
+.NightClouds_wallpaper_background{
+  background-image: url(./assets/NightClouds.webp);
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: cover;
+  color: whitesmoke;
+}
+.Clear_wallpaper_background{
+  background-image: url(./assets/Clear.jpg);
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: cover;
+  
+}
+.NightClear_wallpaper_background{
+  background-image: url(./assets/NightClear.jpeg);
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: cover;
+  color: whitesmoke;
+}
+.Haze_wallpaper_background{
+  background-image: url(./assets/Haze.jpg);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+  color: whitesmoke;
+}
+.NightHaze_wallpaper_background{
+  background-image: url(./assets/NightHaze.jpg);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+  color: whitesmoke;
+}
+.Thunderstorm_wallpaper_background{
+  background-image: url(./assets/thunderstorm.webp);
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: cover;
+}
+.NightThunderstorm_wallpaper_background{
+  background-image: url(./assets/NightThunderStrom.gif);
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: cover;
+  color: whitesmoke;
+}
+.ShowerRain_wallpaper_background{
+  background-image: url(./assets/ShowerRain.jpg);
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: cover;
+  color: whitesmoke;
+}
+.NightShowerRain_wallpaper_background{
+  background-image: url(./assets/NightShowerRain.webp);
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: cover;
+  color: whitesmoke;
+}
+input{
+  background: rgba(225,225,225,0.18);
+  box-shadow: 0 8px 32px 0 rgba(31,38,135,0.37) ;
+  backdrop-filter: blur(8px);
+}
+@media (min-width:200px) and (max-width:800px){
+  .main{
+    display: flex;
+    flex-direction: column;
+  }
+  .forecast{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .App{
+    height: 100vh;
+    width: 100vw;
+    margin: auto;
+    /* flex-shrink: initial; */
+  }
+  .nav{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px -30px;
+  }
+  .weather{
+    display: none;
+  }
+  .formatTime{
+    margin-top: 20px;
+    text-align: center;
+  }
+  .country{
+    text-align: center;
+    font-size: x-large;
+  }
+  .temp-indicator{
+    font-size: xx-large;
+    font-style: italic;
+  }
+  .details{
+    text-align: center;
+  }
+  .temp{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* border: 2px solid red; */
+    width: 100%;
+    height: 70px;
+    gap: 10px;
+  }
+  .tempearature-box{
+     width: 30%; 
+     height: 60px;
+   } 
+  .temp-rise{
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+  }
+ .forecast{
+   margin-top: -150px;
+ }
+ .Hourly-forecast{
+  height: 150px;
+ }
+}
