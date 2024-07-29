@@ -10,7 +10,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios'
 
 function App() {
-  const [query, setQuery] = useState({q: ''})
+  const [query, setQuery] = useState({q: 'New Delhi'})
   const [units, setUnits] = useState("metric")
   const [weather, setWeather] = useState("")
 
@@ -25,21 +25,8 @@ function App() {
   }
 
   useEffect(() => {
-    axios.get( fetchWeather() )
+    fetchWeather()
   }, [query, units ])
-
-  useEffect(()=>{
-    if(navigator.geolocation){
-      navigator.geolocation.getCurrentPosition((position) =>{
-       const {latitude, longitude} = position.coords
-       setQuery({lat: latitude, lon: longitude })
-      },
-     (position)=>{
-         console.log(position)
-         alert("Cannot Read User Current Location! Please Allow Location")
-     })
-   }
-  },[])
 
   const formatBackground = ()=>{
     try{
