@@ -9,9 +9,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
-  // handleLocationClick();
-  
-  const [query, setQuery] = useState({q: ''})
+  const [query, setQuery] = useState({q: 'New Delhi'})
   const [units, setUnits] = useState("metric")
   const [weather, setWeather] = useState(null)
 
@@ -22,29 +20,12 @@ function App() {
     await getFormattedWeatherData({...query, units,}).then((data) => {
       toast.success(`Fetched Weather data for ${data.name}, ${data.country}`)
       setWeather(data)
-      // handleLocationClick();
-    });
-    // console.log(data)
-    
+    });    
   }
 
   useEffect(() => {
     fetchWeather();
   }, [query, units ])
-
-  useEffect(() => {
-  if(navigator.geolocation){
-   
-       navigator.geolocation.getCurrentPosition((position) =>{
-        var latitude = position.coords.latitude
-        var longitude = position.coords.longitude
-        setQuery({lat: latitude, lon: longitude })
-       },
-      ()=>{
-          alert("Cannot Read User Current Location! Please Allow Location")
-      })
-    }
-  },[])
 
   const formatBackground = ()=>{
     try{
@@ -70,8 +51,7 @@ function App() {
       if(weather.icon === 'https://openweathermap.org/img/wn/50n@2x.png') return "NightHaze_wallpaper_background"
       if(weather.icon === 'https://openweathermap.org/img/wn/11d@2x.png') return "Thunderstorm_wallpaper_background"
       if(weather.icon === 'https://openweathermap.org/img/wn/11n@2x.png') return "NightThunderstorm_wallpaper_background"
-    }catch(e){
-    }
+    }catch(e){}
   }
 
 
