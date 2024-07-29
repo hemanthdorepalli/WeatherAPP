@@ -7,11 +7,12 @@ import TimeAndLocation from './components/TimeAndLocation'
 import getFormattedWeatherData from './weatherService'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import axios from 'axios'
 
 function App() {
   const [query, setQuery] = useState({q: 'New Delhi'})
   const [units, setUnits] = useState("metric")
-  const [weather, setWeather] = useState(null)
+  const [weather, setWeather] = useState("")
 
   const fetchWeather = async ()=>{
     const cityName = query.q ? query.q : 'current location';
@@ -24,7 +25,8 @@ function App() {
   }
 
   useEffect(() => {
-    fetchWeather();
+    // fetchWeather();
+    axios.get( fetchWeather() )
   }, [query, units ])
 
   const formatBackground = ()=>{
@@ -51,7 +53,9 @@ function App() {
       if(weather.icon === 'https://openweathermap.org/img/wn/50n@2x.png') return "NightHaze_wallpaper_background"
       if(weather.icon === 'https://openweathermap.org/img/wn/11d@2x.png') return "Thunderstorm_wallpaper_background"
       if(weather.icon === 'https://openweathermap.org/img/wn/11n@2x.png') return "NightThunderstorm_wallpaper_background"
-    }catch(e){}
+    }catch(e){
+      console.log(e)
+    }
   }
 
 
