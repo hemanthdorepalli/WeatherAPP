@@ -11,7 +11,7 @@ import 'react-toastify/dist/ReactToastify.css';
 function App() {
   // handleLocationClick();
   
-  const [query, setQuery] = useState({q: 'New Delhi'})
+  const [query, setQuery] = useState({q: ''})
   const [units, setUnits] = useState("metric")
   const [weather, setWeather] = useState(null)
 
@@ -32,19 +32,19 @@ function App() {
     fetchWeather();
   }, [query, units ])
 
-  // useEffect(() => {
-  // if(navigator.geolocation){
+  useEffect(() => {
+  if(navigator.geolocation){
    
-  //      navigator.geolocation.getCurrentPosition((position) =>{
-  //       var latitude = position.coords.latitude
-  //       var longitude = position.coords.longitude
-  //       setQuery({lat: latitude, lon: longitude })
-  //      },
-  //     ()=>{
-  //         alert("Cannot Read User Current Location! Please Allow Location")
-  //     })
-  //   }
-  // },[])
+       navigator.geolocation.getCurrentPosition((position) =>{
+        var latitude = position.coords.latitude
+        var longitude = position.coords.longitude
+        setQuery({lat: latitude, lon: longitude })
+       },
+      ()=>{
+          alert("Cannot Read User Current Location! Please Allow Location")
+      })
+    }
+  },[])
 
   const formatBackground = ()=>{
     try{
